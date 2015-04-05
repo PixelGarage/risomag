@@ -1,0 +1,291 @@
+/*
+ * responsive.custom.css is for custom media queries that are not set via the
+ * theme settings, such as cascading media queries.
+ *
+ * By default all the other responsive stylesheets used in Adaptivetheme use a
+ * "stacking method", however cascading media queries use a waterfall method so
+ * you can leverage the cascade and inheritance for all browsers that support
+ * media queries, regardless of screen size.
+ *
+ * @SEE http://zomigi.com/blog/essential-considerations-for-crafting-quality-media-queries/#mq-overlap-stack
+ *
+ * NOTE: this file loads by default, to disable got to your theme settings and
+ * look under the "CSS" settings tab.
+ */
+/*
+ * Tablets sizes and up
+ */
+@media only screen and (min-width: 30.0675em) { /*  > 480 px */
+
+    /* =============================================================================
+     *  Region gap for horizontal layout and new padding for text region
+     * ========================================================================== */
+    .page-node .node-page-text-image > .at-panel > .region-two-33-66-first > .region-inner,
+    .page-node .node-produkt .field-collection-view .at-panel > .region-two-33-66-first > .region-inner,
+    .page-node .node-page-netzwerk .at-panel > .region-two-33-66-first > .region-inner {
+        margin-right: 0.5em;
+        padding: 1.5em;
+    }
+    .node-page-netzwerk .at-panel > .region-two-33-66-second > .region-inner form {
+        padding: 0.5em 1.5em 1.5em;
+    }
+
+    /* =============================================================================
+     * Tab positioning and padding
+     * ========================================================================== */
+    .page-node .ui-tabs-nav {
+        margin-left: 50%;
+    }
+    .page-node .ui-tabs-panel .at-panel > .region-two-33-66-first,
+    .page-node .ui-tabs-panel .at-panel > .region-two-33-66-second {
+        width: 50%;
+    }
+
+    /* =============================================================================
+     *  Tabbed Netzwerk / Text-Image page specific styling
+     * ========================================================================== */
+    .page-node .ui-tabs-panel .node-page-netzwerk .at-panel > .region-two-33-66-first > .region-inner,
+    .page-node .ui-tabs-panel .node-page-text-image .at-panel > .region-two-33-66-first > .region-inner {
+        margin-top: -1px; /* compensate top-border */
+        border-top: 1px solid #888888;
+    }
+    .page-node .ui-tabs-panel .node-page-netzwerk .at-panel > .region-two-33-66-second > .region-inner,
+    .page-node .ui-tabs-panel .node-page-text-image .at-panel > .region-two-33-66-second > .region-inner {
+        border-top: none;
+    }
+
+    /* =============================================================================
+     *  Tabbed Produkt specific styling
+     * ========================================================================== */
+    .page-node .node-produkt .ui-tabs-panel .field-item:first-child .at-panel > .region-two-33-66-first > .region-inner {
+        margin-top: -1px; /* compensate top-border */
+        border-top: 1px solid #888888;
+    }
+    .page-node .node-produkt .ui-tabs-panel .field-item:first-child .at-panel > .region-two-33-66-second > .region-inner {
+        border-top: none;
+    }
+
+    /* =============================================================================
+     *  Tabbed Dokumente  specific styling
+     * ========================================================================== */
+
+    .node-dokumente .field-name-title h2,
+    .node-dokumente .field-name-field-produkt-info {
+        font-size: 1em;
+    }
+}
+
+
+/*
+ * Tablet sizes and down
+ */
+@media only screen and (min-width: 40em) { /* >= 640px */
+
+    /* =============================================================================
+     *  Tab positioning
+     * ========================================================================== */
+    .page-node .ui-tabs-nav {
+        margin-left: 33.33333%;
+    }
+    .page-node .ui-tabs-panel .at-panel > .region-two-33-66-first {
+        width: 33.33333%;
+    }
+    .page-node .ui-tabs-panel .at-panel > .region-two-33-66-second {
+        width: 66.66667%;
+    }
+
+    /* =============================================================================
+     *   Superfish nav-bar menu
+     * ========================================================================== */
+    /*
+     * Menu bar wrapper
+     */
+    #menu-bar > nav.menu-bar-wrapper {
+        margin: 0 0.625em 4.6em;
+    }
+    /* no drop-down arrow */
+    #superfish-1 a > .sf-sub-indicator {
+        display: none;
+    }
+
+
+    nav.primary-menu-bar {
+        white-space: nowrap;
+    }
+    #superfish-1,
+    #superfish-1 > li > ul {
+        float: left; /* float parent container to prevent collapsing of it */
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        -moz-border-radius: 0.5em; /* Firefox */
+        -webkit-border-radius: 0.5em; /* Safari and Chrome */
+        border-radius: 0.5em; /* Opera 10.5+, future browsers, and now also Internet Explorer 6+ using IE-CSS3 */
+        background-color: #f6323e;
+    }
+    #superfish-1 > li > ul {
+        margin-top: 2px;
+        background-color: #fff;
+    }
+    #superfish-1 li {
+        /* all list items */
+        float:left;
+        list-style: none;
+        margin: 0;
+        padding: 0.8em 0 0.8em 1.5em;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    /* background of active menus (including border radius adaptation) */
+    #superfish-1 li.active-menu {
+        background-color: rgba(214,214,214,1.0);
+
+    }
+    #superfish-1 > li.first.active-menu {
+        -moz-border-top-left-radius: 0.5em; /* Firefox */
+        -webkit-border-top-left-radius: 0.5em; /* Safari and Chrome */
+        -moz-border-top-left-radius: 0.5em; /* Opera 10.5+, future browsers, and now also Internet Explorer 6+ using IE-CSS3 */
+        border-top-left-radius: 0.5em; /* Opera 10.5+, future browsers, and now also Internet Explorer 6+ using IE-CSS3 */
+    }
+    #superfish-1 li.sf-depth-2.first.active-menu {
+        -moz-border-bottom-left-radius: 0.5em; /* Firefox */
+        -webkit-border-bottom-left-radius: 0.5em; /* Safari and Chrome */
+        -moz-border-bottom-left-radius: 0.5em; /* Opera 10.5+, future browsers, and now also Internet Explorer 6+ using IE-CSS3 */
+        border-bottom-left-radius: 0.5em; /* Opera 10.5+, future browsers, and now also Internet Explorer 6+ using IE-CSS3 */
+    }
+    #superfish-1 > li.last.active-menu,
+    #superfish-1 li.sf-depth-2.last.active-menu {
+        -moz-border-top-right-radius: 0.5em; /* Firefox */
+        -webkit-border-top-right-radius: 0.5em; /* Safari and Chrome */
+        -moz-border-top-right-radius: 0.5em; /* Opera 10.5+, future browsers, and now also Internet Explorer 6+ using IE-CSS3 */
+        border-top-right-radius: 0.5em; /* Opera 10.5+, future browsers, and now also Internet Explorer 6+ using IE-CSS3 */
+        -moz-border-bottom-right-radius: 0.5em; /* Firefox */
+        -webkit-border-bottom-right-radius: 0.5em; /* Safari and Chrome */
+        -moz-border-bottom-right-radius: 0.5em; /* Opera 10.5+, future browsers, and now also Internet Explorer 6+ using IE-CSS3 */
+        border-bottom-right-radius: 0.5em; /* Opera 10.5+, future browsers, and now also Internet Explorer 6+ using IE-CSS3 */
+    }
+
+
+    #superfish-1 li a,
+    #superfish-1 li a:link,
+    #superfish-1 li a:visited {
+        /* all link items */
+        display: block;
+        white-space: nowrap;
+        padding-right: 1.5em;
+        font-size: 1em;
+        font-weight: 300;
+        line-height: 1;
+        color: #fff;
+        text-decoration: none;
+    }
+    #superfish-1 li a.right-border {
+        border-right: 1px solid #fff;
+    }
+
+    #superfish-1 li a:hover,
+    #superfish-1 li a:focus,
+    #superfish-1 li a.active {
+        color: #222222;
+    }
+
+
+    /* =============================================================================
+     *   Superfish menu icons
+     * ========================================================================== */
+    /* Dropdown general */
+    #superfish-1 li.sf-depth-3 > a,
+    #superfish-1 li.sf-depth-3 .view a {
+        margin-left: 0.8em;
+        padding: 0;
+    }
+
+    /*
+     * Produkt menu icons
+     */
+    #superfish-1 li.sf-depth-2 {
+        margin: 0;
+        width: 25%;
+        padding: 0.8em 0.5em;
+    }
+    #superfish-1 li.sf-depth-2 a {
+        height: 3em;
+    }
+    #superfish-1 li.sf-depth-2 a.vacuris-ns {
+        text-indent: -9999px;
+        background: url('../images/Logo_NS.png') no-repeat left center;
+        background-size: 100% auto;
+    }
+    #superfish-1 li.sf-depth-2 a.vacuris-gfk-r {
+        text-indent: -9999px;
+        background: url('../images/Logo_GFK_R.png') no-repeat left center;
+        background-size: 100% auto;
+    }
+    #superfish-1 li.sf-depth-2 a.vacuris-gfk-fw {
+        text-indent: -9999px;
+        background: url('../images/Logo_GFK_FW.png') no-repeat left center;
+        background-size: 100% auto;
+    }
+    #superfish-1 li.sf-depth-2 a.vacuris-gfk-w {
+        text-indent: -9999px;
+        background: url('../images/Logo_GFK_W.png') no-repeat left center;
+        background-size: 100% auto;
+    }
+
+
+    /*
+     * Kontakt main menu
+     */
+    #superfish-1 > li.last {
+        /* Contact menu */
+        float: right;
+    }
+    #superfish-1 li.sf-depth-1 a#menu-contact-main,
+    #superfish-1 li.sf-depth-1 a#menu-contact-main:visited {
+        text-indent: 1.2em;
+        color: #fff;
+        background: url('images/phone_white.png') no-repeat left center;
+        background-size: 1em;
+    }
+    #superfish-1 li.sf-depth-1 a#menu-contact-main:hover,
+    #superfish-1 li.sf-depth-1 a#menu-contact-main:active,
+    #superfish-1 li.sf-depth-1 a#menu-contact-main.active {
+        text-indent: 1.2em;
+        color: #222;
+        background: url('images/phone.png') no-repeat left center;
+        background-size: 1em;
+    }
+
+
+}
+
+@media only screen and (min-width: 48em) { /* >= 768px */
+    /* =============================================================================
+     *   Superfish menu icons
+     * ========================================================================== */
+    #superfish-1 li.sf-depth-2 {
+        padding: 0.8em 1.5em;
+    }
+
+    /* =============================================================================
+    *  Tabbed Dokumente  specific styling
+    * ========================================================================== */
+
+    .node-dokumente .group-doku-teaser {
+        top: 55%;
+        width: 40%;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+
+    .node-dokumente .field-name-title h2,
+    .node-dokumente .field-name-field-produkt-info {
+        font-size: 1.5em;
+    }
+
+}
